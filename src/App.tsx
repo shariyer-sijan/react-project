@@ -1,5 +1,6 @@
 import Navv from './components/Navv'
 import Bann from './components/Bann'
+import Midd from './components/Midd'
 import './App.css'
 function App() {
  
@@ -8,7 +9,7 @@ function App() {
       
     <Navv />
     <Bann/>
-  
+    <Midd/>
     </div>
     </>
   )

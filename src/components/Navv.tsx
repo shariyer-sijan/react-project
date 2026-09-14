@@ -2,7 +2,7 @@
 import logo from '../assets/logo-text.png'
 const Navv = () => {
     return (
-        <div><div className='flex justify-between  container items-center mx-auto mt-3'>
+        <div><div className='flex justify-between  container items-center mx-auto mt-3 sticky top-0 z-50 bg-white'>
             <div><img src={logo}  /></div>
             <div className='flex gap-3' > <a href="#" className='text-pink-400' >Home</a> <a href="#">Technologies</a>
             <a href="#">Projects</a><a href="#">About</a><a href="#">Contact</a></div>
