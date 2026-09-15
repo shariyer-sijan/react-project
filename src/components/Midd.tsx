@@ -1,6 +1,7 @@
 
-import { Suspense } from "react";
+import { Suspense,useState } from "react";
 import Data from "./Data";
+import Data2 from "./Data2";
 import type { userType } from "./Type";
 const dataFetch= async(): Promise<userType[]> =>{
         const res= await fetch("/data.json") ;
@@ -10,21 +11,23 @@ const dataFetch= async(): Promise<userType[]> =>{
     } ;
    
 const Midd = () => {
- const dataPromise=dataFetch() ;   
+ const dataPromise=dataFetch() ;  
+
+ const [Available, setAvailable]=useState<userType[]>([]);
+  const [Stack, setStack]= useState<userType[]>([]);  
     return (
         <div>
             <div> <h1 className="text-5xl font-bold">Explore the <span className="text-pink-500">Technologies</span></h1><h1 className="mt-4 mb-4">Pick one technology per category to build your ideal stack.</h1></div>
             <div  className="flex justify-between ">
+
             <Suspense fallback="Loading ....">
-                <Data dataPromise={dataPromise}/>
+                <Data dataPromise={dataPromise} Available={Available} setAvailable={setAvailable} Stack={Stack} setStack={setStack}/>
             </Suspense>
-            <div className="card bg-base-60 w-65 h-40 shadow-sm ">
-                <div className="card-body">
-                    <div className="card-title">Your Stack</div>
-                    <div>No technologies selected yet.</div>
-                    <button className="btn btn-outline mt-3">Your Stack is empty</button>
-                </div>
-            </div>
+
+            <Suspense fallback="Loading ....">
+                <Data2 Stack={Stack} setStack={setStack} Available={Available} setAvailable={setAvailable} />
+            </Suspense>
+            
             </div>
         </div>
     );

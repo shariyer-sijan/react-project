@@ -1,13 +1,22 @@
-import { use } from 'react';
+import { use, useState } from 'react';
 import type { userType } from "./Type";
 import { MdStarRate } from "react-icons/md";
+import { toast } from 'react-toastify';
 interface hi {
     dataPromise: Promise<userType[]>;
+    Available:  userType[]; 
+    setAvailable: React.Dispatch<React.SetStateAction<userType[]>>;
+    Stack: userType[];
+    setStack: React.Dispatch<React.SetStateAction<userType[]>>;
 }
-const Data = ({ dataPromise }: hi) => {
+
+
+const Data = ({ dataPromise, Available, setAvailable, Stack, setStack }: hi) => {
+
 
     const dataPaici = use(dataPromise);
     return (
+
         <div className='grid grid-cols-3 gap-4'>
             {
                 dataPaici.map((value, index) => {
@@ -28,12 +37,23 @@ const Data = ({ dataPromise }: hi) => {
                             <div className='flex justify-between items-center'>
                                 <div className='bg-blue-100 px-2 py-1 rounded-lg'>{value.category}</div>
                                 <div>{value.difficulty}</div>
-                                <div className='flex justify-between items-center gap-1.5'><MdStarRate className='text-yellow-500'/>
+                                <div className='flex justify-between items-center gap-1.5'><MdStarRate className='text-yellow-500' />
                                     {value.rating}</div>
                             </div>
 
-                            <button className="btn btn-primary rounded-lg ">Add to Stack</button>
-                        </div>
+                            <button
+                                onClick={() => {
+                                    setAvailable( [...Available, value]) ;
+
+                                    setStack([...Stack, value]);
+
+                                    toast.success(`${value.name} added to your stack!`);
+                                }}
+                                disabled={Available.includes(value)}
+                                className="btn btn-primary rounded-lg"
+                            >
+                                { Available.includes(value) ? "Added" : "Add to Stack"}
+                            </button> </div>
                     </div>
                 })
             }
