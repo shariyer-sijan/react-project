@@ -3,31 +3,32 @@
 import logo from '../assets/logo-text.png'
 const Lower_mid = () => {
     return (
-        <div className='mt-20 flex justify-between '>
+        <div className='mt-15 flex justify-between '>
             <div><img src={logo} className='mb-3' />
-                <h1 className='mb-2'>Curated tools, technologies,and resources for developers building <br /> modern software</h1>
-                <div className='flex flex-row  gap-6'>
-                    <a href="#" >Github  </a>
-                    <a href="#">Twitter</a>
-                    <a href="#">Linkedln</a>
+                <h1 className='mb-2 text-slate-500'>Curated tools, technologies,and resources for developers building <br /> modern software</h1>
+                <div className='flex flex-row  gap-6 mt-7'>
+                    <a href="#" className='text-slate-700 ' >Github  </a>
+                    <a href="#"  className='text-slate-700 '>Twitter</a>
+                    <a href="#"  className='text-slate-700 '>Linkedln</a>
                 </div>
             </div>
-            <div>
-                <a href="#" className='font-bold mb-5'>PRODUCT</a> <br />
-                <a href="#">Home</a> <br />
-                <a href="#">Technologies</a>  <br />
-                <a href="#">Projects</a>
+            <div className="flex flex-col">
+                <a href="#" className="font-bold mb-2">PRODUCT</a>
+
+                <a href="#" className="mb-0.75 text-slate-500">Home</a>
+                <a href="#" className="mb-0.75 text-slate-500">Technologies</a>
+                <a href="#" className='text-slate-500'>Projects</a>
             </div>
-            <div>
-                <a href="#" className='font-bold mb-5'>COMPANY</a>  <br />
-                <a href="#">About</a> <br />
-                <a href="#">Contact</a>  <br />
-                <a href="#">Careers</a>
+            <div className="flex flex-col">
+                <a href="#" className='font-bold mb-2'>COMPANY</a>  
+                <a href="#" className="mb-0.75 text-slate-500">About</a> 
+                <a href="#" className="mb-0.75 text-slate-500">Contact</a>  
+                <a href="#" className='text-slate-500'>Careers</a>
             </div>
-            <div >
-                <a href="#" className='font-bold mb-30'>LEGAL</a>  <br />
-                <a href="#">Privacy Policy</a> <br />
-                <a href="#">Terms of Service</a>
+            <div className="flex flex-col" >
+                <a href="#" className='font-bold mb-2'>LEGAL</a>  
+                <a href="#" className="mb-0.75 text-slate-500">Privacy Policy</a> 
+                <a href="#" className='text-slate-500'>Terms of Service</a>
             </div>
         </div>
     );
