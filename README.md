@@ -42,11 +42,11 @@ Props are used to pass data from a parent to child . State is used to store and 
 
 ### 3. What does the useState hook do, and where did you use it in this project?
 
-`useState` is used to create and manage changing data in a component. In this project, I use it to manage the available technologies and the user's development stack.
+useState is used to create and manage changing data in a component. In this project, I use it to manage the available technologies and the user's development stack.
 
 ### 4. What does the useEffect hook do, and why did you need it to load the JSON data?
 
-`useEffect` is used to run code after a component renders.
+useEffect is used to run code after a component renders.
 
 ### 5. Why does every item in a .map() list need a unique key prop?
 
