@@ -1,4 +1,4 @@
-import { use, useState } from 'react';
+import { use } from 'react';
 import type { userType } from "./Type";
 import { MdStarRate } from "react-icons/md";
 import { toast } from 'react-toastify';
@@ -19,7 +19,7 @@ const Data = ({ dataPromise, Available, setAvailable, Stack, setStack }: hi) => 
 
         <div className='grid grid-cols-3 gap-4'>
             {
-                dataPaici.map((value, index) => {
+                dataPaici.map((value) => {
                     return <div className="card bg-base-60 w-80 shadow-sm">
 
                         <div className='flex justify-between items-center px-5 '>

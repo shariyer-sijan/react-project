@@ -22,7 +22,7 @@ const Data2 = ({ Stack, setStack,Available,setAvailable }: iStack) => {
 
             <div className="space-y-2">
 
-                {Stack.map((item,index) => (
+                {Stack.map((item) => (
                     <div
                         key={item.name}
                         className="flex items-center justify-between border rounded-lg p-2"
