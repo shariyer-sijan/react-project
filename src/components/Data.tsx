@@ -24,20 +24,20 @@ const Data = ({ dataPromise, Available, setAvailable, Stack, setStack }: hi) => 
 
                         <div className='flex justify-between items-center px-5 '>
                             <img src={value.icon} className='h-20 w-15' />
-                            <div className="bg-blue-500 text-white px-2 py-1 rounded-lg" >
+                            <div className="bg-blue-500 text-white px-2 py-1 rounded-lg font-[Plus_Jakarta_Sans] font-semibold" >
                                 {value.badge}
                             </div>
                         </div>
 
                         <div className="card-body">
-                            <h2 className="card-title">{value.name}</h2>
-                            <p>{value.description}</p>
+                            <h2 className="card-title font-[Plus_Jakarta_Sans] font-bold text-[#0F172A]">{value.name}</h2>
+                            <p className='font-[Plus_Jakarta_Sans] text-[#64748B]'>{value.description}</p>
 
                             <div className="divider"></div>
                             <div className='flex justify-between items-center'>
-                                <div className='bg-blue-100 px-2 py-1 rounded-lg'>{value.category}</div>
-                                <div>{value.difficulty}</div>
-                                <div className='flex justify-between items-center gap-1.5'><MdStarRate className='text-yellow-500' />
+                                <div className='bg-blue-100 px-2 py-1 rounded-lg text-[#475569] font-[Plus_Jakarta_Sans]'>{value.category}</div>
+                                <div className='text-[#64748B] font-[Plus_Jakarta_Sans]  font-medium'>{value.difficulty}</div>
+                                <div className='flex justify-between items-center gap-1.5 text-[#334155] font-[Plus_Jakarta_Sans] font-semibold'><MdStarRate className='text-yellow-500' />
                                     {value.rating}</div>
                             </div>
 
@@ -50,7 +50,7 @@ const Data = ({ dataPromise, Available, setAvailable, Stack, setStack }: hi) => 
                                     toast.success(`${value.name} added to your stack!`);
                                 }}
                                 disabled={Available.includes(value)}
-                                className="btn btn-primary rounded-lg"
+                                className="btn btn-primary rounded-lg font-[Plus_Jakarta_Sans] font-medium text-white"
                             >
                                 { Available.includes(value) ? "Added" : "Add to Stack"}
                             </button> </div>

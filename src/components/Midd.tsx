@@ -17,8 +17,8 @@ const Midd = () => {
   const [Stack, setStack]= useState<userType[]>([]);  
     return (
         <div>
-            <div> <h1 className="text-5xl font-bold">Explore the <span className="text-5xl font-bold bg-linear-to-r from-orange-500 to-purple-600 bg-clip-text text-transparent">Technologies</span></h1><h1 className="mt-4 mb-4">Pick one technology per category to build your ideal stack.</h1></div>
-            <div  className="flex justify-between ">
+            <div> <h1 className="text-5xl font-extrabold text-[#0F172A]">Explore the <span className="text-5xl font-extrabold bg-linear-to-r from-orange-500 to-purple-600 bg-clip-text text-transparent ">Technologies</span></h1><h1 className="mt-4 mb-4 text-[#64748B]">Pick one technology per category to build your ideal stack.</h1></div>
+            <div  className="flex justify-between mt-10">
 
             <Suspense fallback="Loading ....">
                 <Data dataPromise={dataPromise} Available={Available} setAvailable={setAvailable} Stack={Stack} setStack={setStack}/>
