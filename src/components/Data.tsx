@@ -4,7 +4,7 @@ import { MdStarRate } from "react-icons/md";
 import { toast } from 'react-toastify';
 interface hi {
     dataPromise: Promise<userType[]>;
-    Available:  userType[]; 
+    Available: userType[];
     setAvailable: React.Dispatch<React.SetStateAction<userType[]>>;
     Stack: userType[];
     setStack: React.Dispatch<React.SetStateAction<userType[]>>;
@@ -43,16 +43,19 @@ const Data = ({ dataPromise, Available, setAvailable, Stack, setStack }: hi) => 
 
                             <button
                                 onClick={() => {
-                                    setAvailable( [...Available, value]) ;
+                                    setAvailable([...Available, value]);
 
                                     setStack([...Stack, value]);
 
                                     toast.success(`${value.name} added to your stack!`);
                                 }}
                                 disabled={Available.includes(value)}
-                                className="btn btn-primary rounded-lg font-[Plus_Jakarta_Sans] font-medium text-white"
-                            >
-                                { Available.includes(value) ? "Added" : "Add to Stack"}
+                                className={`rounded-lg font-[Plus_Jakarta_Sans] font-medium
+  ${Available.includes(value)
+                                        ? "w-full border border-gray-300 bg-gray-200 text-gray-500 py-2 mt-4 cursor-not-allowed"
+                                        : "btn btn-primary text-white"
+                                    }`}>
+                                {Available.includes(value) ? "Added" : "Add to Stack"}
                             </button> </div>
                     </div>
                 })
